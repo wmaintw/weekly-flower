@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Flower:</b>
+  <%= @order.flower %>
+</p>
+
+<p>
+  <b>Account:</b>
+  <%= @order.account %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @order.active %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @order.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
