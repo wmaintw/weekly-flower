@@ -35,10 +35,10 @@ body {
 
 #ad {
     height: 384px;
-    background-image: url('../img/home-bg-lib.jpg');
+    background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #000;
+    background-color: #a19375;
     margin-bottom: 60px;
 }
 #ad-title {
