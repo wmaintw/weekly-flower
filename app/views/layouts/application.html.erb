@@ -2,13 +2,52 @@
 <html>
 <head>
   <title>WeeklyFlower</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="header">
+  <div class="container">
+    <img src="img/logo.jpg" />
+    <p id="header-contact">联系我们：159-2803-1840</p>
+  </div>
+</div>
 
+<div id="ad">
+  <div class="container">
+    <div id="ad-title">
+      <p>色彩斑斓的非洲菊<br />2束仅需39元</p>
+      <p><a href="#" class="btn btn-success btn-large"><i class="icon-leaf icon-white"></i> 了解更多详情</a></p>
+    </div>
+    <div id="ad-image">
+      <img src="image/ad-flower.png" />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="content">
+
+    <%= yield %>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p>我们是怎么提供服务的？ 我们提供的服务有什么<strong>特别</strong>？</p>
+    <p><a href="#" class="btn"><i class="icon-info-sign"></i> 点击了解</a></p>
+  </div>
+</div>
+
+<div id="info">
+  <div class="container">
+    <a href="#">关于我们</a>
+    <a href="#">意见反馈</a>
+  </div>
+</div>
 </body>
 </html>

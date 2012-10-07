@@ -1,31 +1,33 @@
-<h1>Listing flowers</h1>
+<div class="row">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image</th>
-    <th>Active</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <% @flowers.each do |flower| %>
+      <div class="span3 flower-container thumbnail">
+        <a href="#">
+          <img src="image/flower/<%= flower.image %>" />
+        </a>
+        <div class="caption">
+          <h4><%= flower.title %></h4>
+          <p>售价：<%= flower.price %>元 x 2束</p>
+          <p><%= flower.description %></p>
+          <p><a href="#" class="btn more-info-button"><i class="icon-leaf more-info-icon"></i> 了解更多</a></p>
+        </div>
+      </div>
+  <% end %>
 
-<% @flowers.each do |flower| %>
-  <tr>
-    <td><%= flower.title %></td>
-    <td><%= flower.description %></td>
-    <td><%= flower.image %></td>
-    <td><%= flower.active %></td>
-    <td><%= flower.price %></td>
-    <td><%= link_to 'Show', flower %></td>
-    <td><%= link_to 'Edit', edit_flower_path(flower) %></td>
-    <td><%= link_to 'Destroy', flower, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <script type="text/javascript">
+      function onMouseOverMoreInfoButton() {
+          $(this).addClass("btn-success");
+          $(this).find(".more-info-icon").addClass("icon-white");
+      }
 
-<br />
+      function onMouseLeaveMoreInfoButton() {
+          $(this).removeClass("btn-success");
+          $(this).find(".more-info-icon").removeClass("icon-white");
+      }
 
-<%= link_to 'New Flower', new_flower_path %>
+      $(document).ready(function() {
+          $(".more-info-button").mouseover(onMouseOverMoreInfoButton).mouseleave(onMouseLeaveMoreInfoButton);
+      });
+  </script>
+
+</div>
