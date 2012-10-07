@@ -3,8 +3,8 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.references :flower
       t.references :account
-      t.boolean :active
-      t.string :status
+      t.boolean :active, :default => true
+      t.string :status, :default => ""
 
       t.timestamps
     end

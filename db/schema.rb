@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -16,28 +17,28 @@ ActiveRecord::Schema.define(:version => 20121007005420) do
     t.string   "name"
     t.string   "phone"
     t.string   "address"
-    t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "active",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "flowers", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.string   "image"
-    t.boolean  "active"
-    t.integer  "price"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.boolean  "active",      :default => true
+    t.integer  "price",       :default => 2
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "orders", :force => true do |t|
     t.integer  "flower_id"
     t.integer  "account_id"
-    t.boolean  "active"
-    t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "active",     :default => true
+    t.string   "status",     :default => ""
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end

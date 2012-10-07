@@ -4,7 +4,7 @@ class CreateFlowers < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.string :image
-      t.boolean :active
+      t.boolean :active, :default => true
       t.integer :price
 
       t.timestamps

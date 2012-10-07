@@ -25,10 +25,12 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+    @order.flower = Flower.find_by_id(params[:flower_id])
+    @account = Account.new
+    #@order.flower = @flower
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @order }
     end
   end
 
@@ -41,14 +43,14 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(params[:order])
+    @order.account = Account.new(params[:account])
+    @order.flower = Flower.find_by_id(params[:flower_id])
 
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, :notice => 'Order was successfully created.' }
-        format.json { render :json => @order, :status => :created, :location => @order }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @order.errors, :status => :unprocessable_entity }
       end
     end
   end

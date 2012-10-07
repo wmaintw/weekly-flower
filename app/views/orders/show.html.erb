@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
+<p>鲜花预定成功，我们会在3天内将鲜花送达。</p>
+
 <p>
   <b>Flower:</b>
-  <%= @order.flower %>
+  <%= @order.flower.title %>
 </p>
 
 <p>
-  <b>Account:</b>
-  <%= @order.account %>
+  <b>收货地址:</b>
+  <%= @order.account.address %>
 </p>
 
 <p>
-  <b>Active:</b>
-  <%= @order.active %>
+  <b>收货人:</b>
+  <%= @order.account.name %>
 </p>
 
 <p>
-  <b>Status:</b>
-  <%= @order.status %>
+  <b>联系电话:</b>
+  <%= @order.account.phone %>
 </p>
 
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to '浏览其他鲜花', flowers_url %>

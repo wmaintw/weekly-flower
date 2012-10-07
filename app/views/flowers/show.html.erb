@@ -28,3 +28,5 @@
 
 <%= link_to 'Edit', edit_flower_path(@flower) %> |
 <%= link_to 'Back', flowers_path %>
+
+<%= link_to '立即购买', new_order_path(:flower_id => @flower.id) %>

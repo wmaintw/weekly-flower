@@ -4,7 +4,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :name
       t.string :phone
       t.string :address
-      t.boolean :active
+      t.boolean :active, :default => true
 
       t.timestamps
     end
