@@ -8,6 +8,7 @@ body {
     background-color: #fff;
     height: 70px;
     padding-top: 5px;
+    border-bottom: 1px solid #D5D5D5;
 }
 #header-contact {
     float: right;
@@ -15,6 +16,15 @@ body {
     font-size: 18px;
     color: gray;
 }
+
+
+#top-content {
+    margin-top: 20px;
+}
+#flower-info {
+    margin-top: 20px;
+}
+
 
 #footer {
     padding: 80px 0px;
@@ -40,7 +50,6 @@ body {
     background-position: center;
     background-color: #a19375;
     margin-bottom: 60px;
-    border-bottom: 1px solid #D5D5D5;
 }
 #ad-title {
     margin-top: 180px;

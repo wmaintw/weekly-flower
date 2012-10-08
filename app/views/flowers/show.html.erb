@@ -1,32 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @flower.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @flower.description %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= @flower.image %>
-</p>
-
-<p>
-  <b>Active:</b>
-  <%= @flower.active %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @flower.price %>
-</p>
+<div id="top-content">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <img src="/image/ad-flower.png" />
+      </div>
+      <div id="flower-info" class="span6">
+        <h3><%= @flower.title %></h3>
+        <p><%= @flower.price %></p>
+        <p><%= @flower.description %></p>
+        <p>
+          <a href="<%= new_order_url %>?flower_id=<%= @flower.id %>" class="btn btn-success">
+            <i class="icon-leaf icon-white"></i> 立即购买
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<%= link_to 'Edit', edit_flower_path(@flower) %> |
-<%= link_to 'Back', flowers_path %>
+<div style="display: none;">
 
-<%= link_to '立即购买', new_order_path(:flower_id => @flower.id) %>
+
+
+  <%= link_to 'Back', flowers_path %>
+
+  <%= link_to '立即购买', new_order_path(:flower_id => @flower.id) %>
+</div>
