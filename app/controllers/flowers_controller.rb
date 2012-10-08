@@ -2,7 +2,8 @@ class FlowersController < ApplicationController
   # GET /flowers
   # GET /flowers.json
   def index
-    @flowers = Flower.all
+    flower = Flower.new
+    @flowers = flower.all_flowers
 
     respond_to do |format|
       format.html # index.html.erb
