@@ -1,4 +1,7 @@
 class FlowersController < ApplicationController
+  layout "main", :only => :index
+
+
   # GET /flowers
   # GET /flowers.json
   def index
