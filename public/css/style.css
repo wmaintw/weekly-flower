@@ -24,6 +24,19 @@ body {
 #flower-info {
     margin-top: 20px;
 }
+#flower-description {
+    margin-top: 50px;
+}
+#step-submit {
+    margin-top: 30px;
+}
+#more-flower-images {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#more-flower-images img {
+    margin-bottom: 50px;
+}
 
 
 #footer {
@@ -64,8 +77,28 @@ body {
     float: right;
 }
 
+
+/*====================================*/
+
 .flower-container {
     margin-left: 16px;
     margin-bottom: 30px;
     padding: 1px;
+}
+
+.center-style {
+    text-align: center;
+}
+.sub-text {
+    color: gray;
+}
+.step {
+    margin-top: 30px;
+}
+.fixed-add-on {
+    width: 60px !important;
+    text-align: right !important;
+}
+.radio p {
+    font-size: 16px !important;
 }

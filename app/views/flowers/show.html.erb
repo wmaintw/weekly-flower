@@ -1,19 +1,62 @@
 <div id="top-content">
   <div class="container">
     <div class="row">
-      <div class="span6">
-        <img src="/image/ad-flower.png" />
+      <div class="span7 center-style">
+        <img src="/image/ad-flower.png" width="300" />
+        <div id="flower-description" class="span6">
+          <p>
+            <%= @flower.description %>
+            非洲菊，菊科，（英文名：Gerbera、Barberton daisy 等），别名为太阳花、猩猩菊、日头花等，是多年生草本植物，顶生花序，花色分别有红色、白色、黄色、橙色、紫色等。繁殖用播种或分株法，原产地为南非。
+          </p>
+
+          <div id="more-flower-images">
+            <img src="/image/ad-flower.png" width="300" />
+            <img src="/image/ad-flower.png" width="300" />
+          </div>
+        </div>
       </div>
-      <div id="flower-info" class="span6">
+
+      <div id="flower-info" class="span5">
         <h3><%= @flower.title %></h3>
-        <p><%= @flower.price %></p>
-        <p><%= @flower.description %></p>
-        <p>
+
+        <p class="text-success lead">第1步，选择适合您的套餐</p>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+          <p>体验套装，<span class="text-error">29元</span></p><p class="sub-text">1束鲜花，一次性寄送，免运费</p>
+        </label>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
+          <p>标准套装，<span class="text-error">39元</span></p><p class="sub-text">2束鲜花，分两次寄送，免运费</p>
+        </label>
+
+
+        <p class="text-success lead step">第2步，提供您的收货信息</p>
+        <div class="input-prepend">
+          <span class="add-on fixed-add-on">收货地址</span><input class="span4" id="prependedInput" size="16" type="text" placeholder="">
+        </div>
+        <div class="input-prepend">
+          <span class="add-on fixed-add-on">收货人</span><input class="span4" id="prependedInput" size="16" type="text" placeholder="">
+        </div>
+        <div class="input-prepend">
+          <span class="add-on fixed-add-on">联系电话</span><input class="span4" id="prependedInput" size="16" type="text" placeholder="">
+        </div>
+
+        <p class="text-success lead step">备注说明</p>
+        <p><strong>关于支付方式：</strong>目前我们暂时只支持<strong>货到付款</strong>，由此给您带来的不便敬请谅解。</p>
+        <p><strong>关于免费寄送：</strong>目前我们暂时只支持<strong>每周双休日送货</strong>，送货前我们将会与您取得电话联系，由此给您带来的不便敬请谅解。</p>
+
+
+
+        <p id="step-submit">
           <a href="<%= new_order_url %>?flower_id=<%= @flower.id %>" class="btn btn-success">
-            <i class="icon-leaf icon-white"></i> 立即购买
+            <i class="icon-leaf icon-white"></i> 立即订购
           </a>
         </p>
       </div>
+    </div>
+
+    <div>
+
     </div>
   </div>
 </div>
