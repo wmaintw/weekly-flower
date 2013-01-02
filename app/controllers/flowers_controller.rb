@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class FlowersController < ApplicationController
   layout "main", :only => :index
 
@@ -18,6 +20,10 @@ class FlowersController < ApplicationController
   # GET /flowers/1.json
   def show
     @flower = Flower.find(params[:id])
+
+    @order = Order.new
+    @order.flower = @flower
+    @account = Account.new
 
     respond_to do |format|
       format.html # show.html.erb

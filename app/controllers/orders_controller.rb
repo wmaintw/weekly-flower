@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
@@ -42,15 +44,18 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(params[:order])
-    @order.account = Account.new(params[:account])
-    @order.flower = Flower.find_by_id(params[:flower_id])
+    @account = Account.new(params[:account])
+    @flower = Flower.find_by_id(params[:flower_id])
+
+    @order = Order.new
+    @order.account = @account
+    @order.flower = @flower
 
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, :notice => 'Order was successfully created.' }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to flower_url(@flower), :notice => '请提供收货信息' }
       end
     end
   end

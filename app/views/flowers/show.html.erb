@@ -19,33 +19,35 @@
       <div id="flower-info" class="span5">
         <h3><%= @flower.title %></h3>
 
-        <p class="text-success lead">第1步，选择适合您的套餐</p>
-        <label class="radio">
-          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-          <p>体验套装，<span class="text-error">29元</span></p><p class="sub-text">1束鲜花，一次性寄送，免运费</p>
-        </label>
-        <label class="radio">
-          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
-          <p>标准套装，<span class="text-error">39元</span></p><p class="sub-text">2束鲜花，分两次寄送，免运费</p>
-        </label>
+        <%= form_for(@order) do |f| %>
+            <%= fields_for @account do |u| %>
+                <p class="text-success lead">请提供您的收货信息 <span class="label label-important">免费寄送</span></p>
 
+                <% unless flash[:notice].blank? %>
+                    <p class="alert alert-error">
+                      <%= flash[:notice] %>
+                    </p>
+                <% end %>
 
-        <p class="text-success lead step">第2步，提供您的收货信息</p>
-        <div class="input-prepend">
-          <span class="add-on fixed-add-on">收货地址</span><input class="span4" id="prependedInput" size="16" type="text" placeholder="">
-        </div>
-        <div class="input-prepend">
-          <span class="add-on fixed-add-on">收货人</span><input class="span4" id="prependedInput" size="16" type="text" placeholder="">
-        </div>
-        <div class="input-prepend">
-          <span class="add-on fixed-add-on">联系电话</span><input class="span4" id="prependedInput" size="16" type="text" placeholder="">
-        </div>
+                <div class="input-prepend">
+                  <span class="add-on fixed-add-on">收货地址</span>
+                  <%= u.text_field :address, :class => "span4", :size => nil %>
+                </div>
+                <div class="input-prepend">
+                  <span class="add-on fixed-add-on">收货人</span>
+                  <%= u.text_field :name, :class => "span4", :size => nil %>
+                </div>
+                <div class="input-prepend">
+                  <span class="add-on fixed-add-on">联系电话</span>
+                  <%= u.text_field :phone, :class => "span4", :size => nil %>
+                </div>
+            <% end %>
 
-        <p id="step-submit">
-          <a href="<%= new_order_url %>?flower_id=<%= @flower.id %>" class="btn btn-success">
-            <i class="icon-leaf icon-white"></i> 立即订购
-          </a>
-        </p>
+            <p id="step-submit">
+              <%= hidden_field_tag "flower_id", @order.flower.id %>
+              <%= f.submit :value => "立即订购 (货到付款)", :class => "btn btn-success" %>
+            </p>
+        <% end %>
 
         <p class="text-success lead step">备注说明</p>
         <p><strong>关于支付方式：</strong>目前我们暂时只支持<strong>货到付款</strong>，由此给您带来的不便敬请谅解。</p>
@@ -58,14 +60,4 @@
 
     </div>
   </div>
-</div>
-
-
-<div style="display: none;">
-
-
-
-  <%= link_to 'Back', flowers_path %>
-
-  <%= link_to '立即购买', new_order_path(:flower_id => @flower.id) %>
 </div>
