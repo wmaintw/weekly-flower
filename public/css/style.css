@@ -92,6 +92,9 @@ body {
 .center-style {
     text-align: center;
 }
+.right-style {
+    text-align: right;
+}
 .sub-text {
     color: gray;
 }
@@ -104,4 +107,38 @@ body {
 }
 .radio p {
     font-size: 16px !important;
+}
+
+/*=====================================*/
+.pay-success {
+    padding: 30px;
+}
+.pay-success-img {
+    padding-top: 10px;
+    padding-left: 80px;
+}
+.pay-details {
+    border: 1px dashed #D9E8BC;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 500px;
+    margin-top: 20px;
+    color: #333333;
+}
+.pay-shipping {
+    color: #468847;
+}
+.text-header {
+    border-bottom: 1px dashed #D9E8BC;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.text-title {
+    display: inline-block;
+    width: 90px;
+    padding-right: 10px;
+    text-align: right;
+}
+.pay-more {
+    margin-top: 30px;
 }
