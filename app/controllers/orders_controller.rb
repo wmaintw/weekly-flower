@@ -1,4 +1,5 @@
 # encoding: utf-8
+require "uuidtools"
 
 class OrdersController < ApplicationController
   # GET /orders
@@ -15,7 +16,12 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by_uuid(params[:id])
+
+    if (@order == nil)
+      redirect_to "/"
+      return
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -48,12 +54,13 @@ class OrdersController < ApplicationController
     @flower = Flower.find_by_id(params[:flower_id])
 
     @order = Order.new
+    @order.uuid = UUIDTools::UUID.random_create.to_s
     @order.account = @account
     @order.flower = @flower
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, :notice => 'Order was successfully created.' }
+        format.html { redirect_to :action => "show", :id => @order.uuid }
       else
         format.html { redirect_to flower_url(@flower), :notice => '请提供收货信息' }
       end
