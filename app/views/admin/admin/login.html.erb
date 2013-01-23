@@ -1,0 +1,23 @@
+<div id="login-section">
+  <%= form_tag '/admin/do_login', :method => "post" do %>
+      <div>
+        <span>Username:</span>
+        <%= text_field_tag "username", nil, :class => "span4" %>
+      </div>
+
+      <div>
+        <span>Password:</span>
+        <%= password_field_tag "password", nil, :class => "span4" %>
+      </div>
+
+      <div>
+        <%= submit_tag "Login", :class => "btn btn-info" %>
+      </div>
+
+      <% if flash[:info] %>
+      <div id="login-message" class="alert alert-info">
+        <%= flash[:info] %>
+      </div>
+      <% end %>
+  <% end %>
+</div>

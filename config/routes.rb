@@ -52,6 +52,13 @@ WeeklyFlower::Application.routes.draw do
   #     resources :products
   #   end
 
+  namespace :admin do
+    get 'login', :to => "admin#login"
+    post 'do_login', :to => "admin#do_login"
+    get 'logout', :to => "admin#logout"
+    get 'home', :to => "admin#home"
+  end
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
