@@ -1,0 +1,27 @@
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+  <tr>
+    <th class="span1">Order Id</th>
+    <th class="span2">Flower</th>
+    <th class="span2">Account</th>
+    <th class="span1">Active?</th>
+    <th class="span1">Status</th>
+    <th class="span2">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+      <tr>
+        <td><a href="/orders/<%= order.uuid %>" target="_blank"><%= order.id %></a></td>
+        <td><%= order.flower.title %></td>
+        <td><%= order.account.name %></td>
+        <td><%= order.active %></td>
+        <td><%= order.status %></td>
+        <td>
+          <a href="/orders/<%= order.uuid %>" target="_blank">View</a>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

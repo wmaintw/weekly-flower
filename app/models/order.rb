@@ -12,4 +12,8 @@ class Order < ActiveRecord::Base
       errors.add(:account, "account address, name, phone must be presence.")
     end
   end
+
+  def all_orders
+    Order.order("id DESC")
+  end
 end

@@ -1,0 +1,27 @@
+
+<div class="operation-section">
+  <a href="/admin/flowers/new" class="btn">Add Flower</a>
+</div>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+  <tr>
+    <th class="span1">Flower Id</th>
+    <th class="span2">Name</th>
+    <th class="span1">Price</th>
+    <th class="span1">Display Order</th>
+    <th class="span2">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @flowers.each do |flower| %>
+      <tr>
+        <td><%= flower.id %></td>
+        <td><%= flower.title %></td>
+        <td><%= flower.price %>元</td>
+        <td><%= flower.display_order %></td>
+        <td><a href="/admin/flowers/<%= flower.id %>/edit">Edit</a></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

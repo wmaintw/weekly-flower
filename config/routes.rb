@@ -53,10 +53,13 @@ WeeklyFlower::Application.routes.draw do
   #   end
 
   namespace :admin do
-    get 'login', :to => "admin#login"
-    post 'do_login', :to => "admin#do_login"
-    get 'logout', :to => "admin#logout"
-    get 'home', :to => "admin#home"
+    get 'login' => 'auth#login'
+    post 'do_login' => 'auth#do_login'
+    get 'logout' => 'auth#logout'
+
+    resources :home
+    resources :flowers
+    resources :orders
   end
 
   # You can have the root of your site routed with "root"

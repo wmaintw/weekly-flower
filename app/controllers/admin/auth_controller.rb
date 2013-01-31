@@ -1,7 +1,7 @@
 require 'digest/sha2'
 
-class Admin::AdminController < ApplicationController
-  layout "admin/admin"
+class Admin::AuthController < ApplicationController
+  layout "admin/auth"
 
   before_filter :auth_required, :only => [:home]
 
@@ -20,7 +20,7 @@ class Admin::AdminController < ApplicationController
 
     if user != nil
       session["admin"] = "admin"
-      redirect_to :action => "home"
+      redirect_to :controller => "home", :action => "index"
     else
       flash[:info] = "Login failed, please try again."
       redirect_to :action => "login"
