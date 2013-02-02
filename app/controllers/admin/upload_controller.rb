@@ -17,9 +17,6 @@ class Admin::UploadController < ApplicationController
   def create
     @pic = Pic.new()
 
-    p "-------------"
-    p params
-
     if !valid_file
       flash[:message] = "Failed to upload file, please choose file."
       redirect_to "/admin/upload/new"
