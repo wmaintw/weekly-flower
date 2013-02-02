@@ -1,0 +1,22 @@
+<div class="operation-section">
+  <a href="/admin/upload/new" class="btn">Add Pic</a>
+</div>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+  <tr>
+    <th class="span1">Pic Id</th>
+    <th class="span8">URL</th>
+    <th class="span1">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @pics.each do |pic| %>
+      <tr>
+        <td><%= pic.id %></td>
+        <td>/image/flower/<%= pic.filename %></td>
+        <td><a href="/image/flower/<%= pic.filename %>" target="_blank">View</a></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
