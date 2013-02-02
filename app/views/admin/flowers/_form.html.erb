@@ -1,0 +1,28 @@
+
+<div class="form-item">
+  <%= label_tag :title %>
+  <%= text_field_tag "flower[title]", @flower.title, :class => "span4" %>
+</div>
+<div class="form-item">
+  <%= label_tag :description %>
+  <%= text_field_tag "flower[description]", @flower.description, :class => "span4" %>
+</div>
+<div class="form-item">
+  <%= label_tag :image %>
+  <%= text_field_tag "flower[image]", @flower.image, :class => "span4" %>
+</div>
+<div class="form-item">
+  <%= label_tag :price %>
+  <%= number_field_tag "flower[price]", @flower.price, :class => "span2" %>
+</div>
+<div class="form-item">
+  <%= label_tag :display_order %>
+  <%= number_field_tag "flower[display_order]", @flower.display_order, :class => "span2" %>
+</div>
+<div class="form-item">
+  <%= label_tag :details %>
+  <%= text_area_tag "flower[details]", @flower.details, :class => "text-area" %>
+</div>
+<div class="form-item-submit">
+  <%= submit_tag "Save", :class => "btn btn-info" %>
+</div>

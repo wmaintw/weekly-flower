@@ -6,6 +6,24 @@
     margin-bottom: 20px;
 }
 
+.form-item {
+
+}
+
+.form-item-submit {
+    margin-top: 20px;
+}
+
+.flash-message {
+    margin-bottom: 20px;
+}
+
+.text-area {
+    width: 800px;
+    height: 260px;
+}
+
+
 #login-section {
     margin-top: 60px;
     width: 300px;

@@ -1,5 +1,5 @@
 <div class="operation-section">
-  <h2>Add Flower</h2>
+  <h2>Edit Flower</h2>
 
   <% if flash[:message] %>
       <p class="alert alert-info">
@@ -9,7 +9,7 @@
 </div>
 
 <div class="content-section">
-  <%= form_tag "/admin/flowers" do %>
+  <%= form_tag "/admin/flowers/#{@flower.id}", :method => "put" do %>
     <%= render 'form' %>
   <% end %>
 </div>
