@@ -1,1 +1,1 @@
-rvm use 1.9.3@weekly-flower-gemset
+rvm use 1.9.3@weekly-flower-gemset --create
