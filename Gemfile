@@ -43,11 +43,13 @@ gem 'uuidtools'
 
 #===========================
 
-group :development, :test do
-  gem 'sqlite3'
+group :development do
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
 end
 
 group :test do
+  gem 'sqlite3'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
