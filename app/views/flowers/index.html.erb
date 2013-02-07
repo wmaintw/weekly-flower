@@ -3,11 +3,11 @@
   <% @flowers.each do |flower| %>
       <div class="span3 flower-container thumbnail">
         <a href="<%= flower_path(flower) %>">
-          <img src="/image/flower/<%= flower.image %>" />
+          <img src="<%= flower.image %>" />
         </a>
         <div class="caption">
           <h4><%= flower.title %></h4>
-          <p>售价：<%= flower.price %>元 x 2束</p>
+          <p>售价：<%= flower.price %>元</p>
           <p><%= flower.description %></p>
           <p><a href="<%= flower_path(flower) %>" class="btn more-info-button"><i class="icon-leaf more-info-icon"></i> 了解更多</a></p>
         </div>
