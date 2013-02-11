@@ -16,3 +16,6 @@
 
 /.idea
 db/schema.rb
+/logfile
+/public/assets
+/public/image/flower
