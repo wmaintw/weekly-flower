@@ -6,5 +6,10 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
-Admin.create(:username => 'admin', :password => '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918')
-Setting.create(:key => 'ad_img', :value => '/image/ad-flower.png')
+if !Admin.find_by_username "admin"
+  Admin.create(:username => 'admin', :password => '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918')
+end
+
+if !Setting.find_by_key "ad_img"
+  Setting.create(:key => 'ad_img', :value => '/image/ad-flower.png')
+end
