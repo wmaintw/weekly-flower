@@ -7,8 +7,7 @@
         </a>
         <div class="caption">
           <h4><%= flower.title %></h4>
-          <p>售价：<%= flower.price %>元</p>
-          <p><%= flower.description %></p>
+          <p>售价：<span class="price"><%= flower.price %>元</span></p>
           <p><a href="<%= flower_path(flower) %>" class="btn more-info-button"><i class="icon-leaf more-info-icon"></i> 了解更多</a></p>
         </div>
       </div>

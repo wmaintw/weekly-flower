@@ -7,7 +7,6 @@ class Flower < ActiveRecord::Base
   validates :title, :presence => true
   validates :price, :presence => true
   validates :image, :presence => true
-  validates :description, :presence => true
   validates :details, :presence => true
   validates :display_order, :presence => true
 

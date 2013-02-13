@@ -9,6 +9,7 @@ class FlowersController < ApplicationController
   def index
     flower = Flower.new
     @flowers = flower.all_flowers
+    @ad_img = Setting.find_by_key("ad_img").value
 
     respond_to do |format|
       format.html # index.html.erb

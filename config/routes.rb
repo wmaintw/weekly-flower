@@ -61,6 +61,7 @@ WeeklyFlower::Application.routes.draw do
     resources :flowers
     resources :orders
     resources :upload
+    resources :settings
   end
 
   # You can have the root of your site routed with "root"

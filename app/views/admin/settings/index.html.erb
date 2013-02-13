@@ -1,0 +1,23 @@
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+  <tr>
+    <th class="span1">Id</th>
+    <th class="span2">Key</th>
+    <th class="span8">Value</th>
+    <th class="span1">Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @settings.each do |setting| %>
+      <tr>
+        <td><%= setting.id %></td>
+        <td><%= setting.key %></td>
+        <td><%= setting.value %></td>
+        <td>
+          <a href="/admin/settings/<%= setting.id %>/edit">Edit</a>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

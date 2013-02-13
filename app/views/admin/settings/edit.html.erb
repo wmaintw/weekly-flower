@@ -1,0 +1,24 @@
+<div class="operation-section">
+  <h2>Edit Setting</h2>
+
+  <a href="/admin/settings" class="btn">Back</a>
+
+  <% if flash[:message] %>
+      <p class="alert alert-info">
+        <%= flash[:message] %>
+      </p>
+  <% end %>
+</div>
+
+<div class="content-section">
+  <%= form_tag "/admin/settings/#{@setting.id}", :method => "put" do %>
+      <div class="form-item">
+        <%= label_tag @setting.key %>
+        <%= text_field_tag "setting[value]", @setting.value, :class => "span8" %>
+      </div>
+
+      <div class="form-item-submit">
+        <%= submit_tag "Save", :class => "btn btn-info" %>
+      </div>
+  <% end %>
+</div>
